@@ -12,8 +12,16 @@ public class Data {
         P = 4;
         H = N / P;
         a = generateDouble(r, 1, 10000);
+        M = new double[n];
+        D = new double[n];
+        C = new double[n];
+
+        MC = new double[n][n];
+        MZ = new double[n][n];
+        MM = new double[n][n];
+
         for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; i++) {
+            for (int j = 0; j < N; j++) {
                 MC[i][j] = generateDouble(r, 1, 10000);
                 MZ[i][j] = generateDouble(r, 1, 10000);
                 MM[i][j] = generateDouble(r, 1, 10000);

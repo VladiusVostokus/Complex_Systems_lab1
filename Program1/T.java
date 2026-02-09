@@ -1,16 +1,18 @@
 public class T extends Thread {
     private int h;
     private Ops O;
-    private Data D;
+    private Thread id;
 
-    public T(Ops ops, Data data, int n, int p) {
+    public T(Ops ops, int n, int p) {
         h = n / p;
         O = ops;
-        D = data;
+        id = Thread.currentThread();
     }
 
     @Override
     public void run() {
-        System.out.printf("Thread started",Thread.currentThread().toString());
+        System.out.printf("Thread started",id.toString());
+        System.out.println("Working...");
+        System.out.printf("Thread finished",id.toString());
     }
 }
