@@ -1,25 +1,25 @@
 import java.util.Arrays;
 
 public class Ops {
-    private Data D;
+    Data data;
     private int start, end;
     public Ops(Data d, int threadId) {
-        D = d;
-        start = D.H * threadId;
-        end = start + D.H;
+        data = d;
+        start = data.H * threadId;
+        end = start + data.H;
     }
 
-    public void mulPartOfMatrAndScal(int[][] M, int c) {
+    public void mulPartOfMatrAndScal(double[][] M, double c) {
         for (int i = start; i < end; i++) {
-            for (int j = 0; j < D.N; j++) {
+            for (int j = 0; j < data.N; j++) {
                 M[i][j] *= c;
             }
         }
     }
 
-    public void multiplyPartOfMatrices(int[][] Res, int[][] A, int[][] B) {
+    public void multiplyPartOfMatrices(double[][] Res, double[][] A, double[][] B) {
         for (int i = start; i < end; i++) {
-            for (int j = 0; j < D.N; j++) {
+            for (int j = 0; j < data.N; j++) {
                 for (int k = start; k < end; k++) {
                     Res[i][j] =+ A[i][k] * B[k][j];
                 }
@@ -27,15 +27,15 @@ public class Ops {
         }
     }
 
-    public void multiplyPartOfVecAndMatr(int[] Res, int[] A, int[][] B) {
+    public void multiplyPartOfMatrAndVec(double[] Res, double[] A, double[][] B) {
         for (int i = start; i < end; i++) {
-            for (int j = 0; j < D.H; j++) {
-                Res[i] += A[i] * B[i][j];
+            for (int j = 0; j < data.H; j++) {
+                Res[i] += B[i][j] * A[i];
             }
         }
     }
 
-    public int multiplyPartOfVecScalar(int[] A, int[] B) {
+    public int multiplyPartOfVecScalar(double[] A, double[] B) {
         int res = 0;
         for (int i = start; i < end; i++) {
             res += A[i] * B[i];
@@ -43,24 +43,30 @@ public class Ops {
         return res;
     }
 
-    public void multiplyVecAndScalar(int[] A, int b) {
+    public void multiplyVecAndScalar(double[] A, double b) {
         for (int i = start; i < end; i++) {
            A[i] *= b;
         }
     }
 
-    public void addPartOfTwoVercors(int[] Res, int[] A, int[] B) {
+    public void addPartOfTwoVercors(double[] Res, double[] A, double[] B) {
         for (int i = start; i < end; i++) {
-           Res[i] += A[i] + B[i];
+           Res[i] = A[i] + B[i];
         }
     }
 
-    public void sortVec(int[] Res) {
+    public void subPartOfTwoVercors(double[] Res, double[] A, double[] B) {
+        for (int i = start; i < end; i++) {
+           Res[i] = A[i] - B[i];
+        }
+    }
+
+    public void sortVec(double[] Res) {
         Arrays.sort(Res, start, end);
     }
 
-    public void mergeVec(int[] Res, int leftStart, int rightStart, int rightEnd) {
-        int[] merged = new int[rightEnd - leftStart];
+    public void mergeVec(double[] Res, int leftStart, int rightStart, int rightEnd) {
+        double[] merged = new double[rightEnd - leftStart];
         int i = leftStart;
         int j = rightStart;
         int k = 0;
