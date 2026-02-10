@@ -2,13 +2,14 @@ import java.util.Arrays;
 
 public class Ops {
     private Data D;
-    public Ops(Data d) {
+    private int start, end;
+    public Ops(Data d, int threadId) {
         D = d;
+        start = D.H * threadId;
+        end = start + D.H;
     }
 
-    public void mulPartOfMatrAndScal(int[][] M, int c, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void mulPartOfMatrAndScal(int[][] M, int c) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < D.N; j++) {
                 M[i][j] *= c;
@@ -16,9 +17,7 @@ public class Ops {
         }
     }
 
-    public void multiplyPartOfMatrices(int[][] Res, int[][] A, int[][] B, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void multiplyPartOfMatrices(int[][] Res, int[][] A, int[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < D.N; j++) {
                 for (int k = start; k < end; k++) {
@@ -28,9 +27,7 @@ public class Ops {
         }
     }
 
-    public void multiplyPartOfVecAndMatr(int[] Res, int[] A, int[][] B, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void multiplyPartOfVecAndMatr(int[] Res, int[] A, int[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < D.H; j++) {
                 Res[i] += A[i] * B[i][j];
@@ -38,35 +35,27 @@ public class Ops {
         }
     }
 
-    public int multiplyPartOfVecScalar(int[] A, int[] B, int threadNumber) {
+    public int multiplyPartOfVecScalar(int[] A, int[] B) {
         int res = 0;
-        int start = D.H * threadNumber;
-        int end = start + D.H;
         for (int i = start; i < end; i++) {
             res += A[i] * B[i];
         }
         return res;
     }
 
-    public void multiplyVecAndScalar(int[] A, int b, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void multiplyVecAndScalar(int[] A, int b) {
         for (int i = start; i < end; i++) {
            A[i] *= b;
         }
     }
 
-    public void addPartOfTwoVercors(int[] Res, int[] A, int[] B, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void addPartOfTwoVercors(int[] Res, int[] A, int[] B) {
         for (int i = start; i < end; i++) {
            Res[i] += A[i] + B[i];
         }
     }
 
-    public void sortVec(int[] Res, int threadNumber) {
-        int start = D.H * threadNumber;
-        int end = start + D.H;
+    public void sortVec(int[] Res) {
         Arrays.sort(Res, start, end);
     }
 
