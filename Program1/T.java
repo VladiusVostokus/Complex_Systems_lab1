@@ -11,8 +11,8 @@ public class T extends Thread {
 
     @Override
     public void run() {
-        System.out.println(id);
+        System.out.printf("Thread started: %d %n", id);
         
-        System.out.println(id);
+        System.out.printf("Thread finished: %d %n", id);
     }
 }
