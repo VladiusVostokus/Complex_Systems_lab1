@@ -9,10 +9,19 @@ public class T extends Thread {
         id = threadId;
     }
 
+    public double[] returnX(){
+        return O.data.M;
+    }
+
+    // X = SORT(MC*M+D-C)
+    // MF = min(M+D)*MC*MZ+MM*(MC+MM)*a
     @Override
     public void run() {
         System.out.printf("Thread started: %d %n", id);
-        
+        O.multiplyPartOfMatrAndVec(O.data.M, O.data.M, O.data.MC);
+        O.addPartOfTwoVercors(O.data.M, O.data.M, O.data.D);
+        O.subPartOfTwoVercors(O.data.M, O.data.M, O.data.C);
+        O.sortVec(O.data.M);
         System.out.printf("Thread finished: %d %n", id);
     }
 }

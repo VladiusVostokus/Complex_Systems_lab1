@@ -1,7 +1,8 @@
 class Main1 {
     public static void main(String[] args) {
-        System.out.println("Hello, World!"); 
+        System.out.println("Start main thread"); 
         int n = 4;
+        double[] X = new double[n];
 
         Data d1 = new Data(n);
         Ops o1 = new Ops(d1, 0);
@@ -29,6 +30,13 @@ class Main1 {
             T2.join();
             T3.join();
             T4.join();
+
+            double[] X1 = T1.returnX();
+
+            for(int i = 0; i < n; i++) {
+                System.out.println(X1[i]); 
+            }
+            System.out.println("Finish main thread"); 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
