@@ -36,13 +36,10 @@ class Main1 {
             double[] X3 = T3.returnX();
             double[] X4 = T4.returnX();
 
-
-            for(int i = 0; i < n / 4; i++) {
-                X[i] = X1[i];
-                X[i + 1] = X2[i];
-                X[i + 2] = X3[i];
-                X[i + 3] = X4[i];
-            }
+            System.arraycopy(X1, 0, X, o1.start, o1.data.H);
+            System.arraycopy(X2, 0, X, o2.start, o2.data.H);
+            System.arraycopy(X3, 0, X, o3.start, o3.data.H);
+            System.arraycopy(X4, 0, X, o4.start, o4.data.H);
 
             for (int i = 0; i < n; i++) {
                 System.out.println(X[i]);

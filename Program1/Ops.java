@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Ops {
     Data data;
-    private int start, end;
+    int start, end;
     public Ops(Data d, int threadId) {
         data = d;
         start = data.H * threadId;
