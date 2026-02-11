@@ -32,9 +32,20 @@ class Main1 {
             T4.join();
 
             double[] X1 = T1.returnX();
+            double[] X2 = T2.returnX();
+            double[] X3 = T3.returnX();
+            double[] X4 = T4.returnX();
+
 
             for(int i = 0; i < n / 4; i++) {
-                System.out.println(X1[i]); 
+                X[i] = X1[i];
+                X[i + 1] = X2[i];
+                X[i + 2] = X3[i];
+                X[i + 3] = X4[i];
+            }
+
+            for (int i = 0; i < n; i++) {
+                System.out.println(X[i]);
             }
             System.out.println("Finish main thread"); 
         } catch (InterruptedException e) {
