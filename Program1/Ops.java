@@ -88,4 +88,14 @@ public class Ops {
         }
         System.arraycopy(merged, 0, Res, leftStart, merged.length);
     }
+
+    public double[] returnX(double[] vec) {
+        double[] res = new double[data.H];
+        int idx = 0;
+        for (int i = start; i < end; i++) {
+            res[idx] = vec[i];
+            idx++;
+        }
+        return res;
+    }
 }

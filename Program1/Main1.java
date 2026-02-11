@@ -33,7 +33,7 @@ class Main1 {
 
             double[] X1 = T1.returnX();
 
-            for(int i = 0; i < n; i++) {
+            for(int i = 0; i < n / 4; i++) {
                 System.out.println(X1[i]); 
             }
             System.out.println("Finish main thread"); 

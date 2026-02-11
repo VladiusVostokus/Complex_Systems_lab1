@@ -10,7 +10,7 @@ public class T extends Thread {
     }
 
     public double[] returnX(){
-        return O.data.M;
+        return O.returnX(O.data.M);
     }
 
     // X = SORT(MC*M+D-C)
