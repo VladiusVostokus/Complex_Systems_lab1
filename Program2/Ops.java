@@ -30,7 +30,7 @@ public class Ops {
     public void multiplyPartOfMatrAndVec(double[] Res, double[] A, double[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.H; j++) {
-                Res[i] += B[i][j] * A[i];
+                Res[i] += B[i][j] * A[j];
             }
         }
     }

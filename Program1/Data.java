@@ -3,7 +3,7 @@ import java.util.Random;
 public class Data {
     public int N, P, H;
     public double a;
-    public double[] M, D, C;
+    public double[] M, D, C, X, X1, X2;
     public double[][] MC, MZ, MM;
 
     public Data(int n) {
@@ -15,6 +15,9 @@ public class Data {
         M = new double[n];
         D = new double[n];
         C = new double[n];
+        X = new double[n];
+        X1 = new double[n];
+        X2 = new double[n];
 
         MC = new double[n][n];
         MZ = new double[n][n];

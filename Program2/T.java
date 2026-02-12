@@ -14,14 +14,17 @@ public class T extends Thread {
     }
 
     // X = SORT(MC*M+D-C)
+    // X1 = MC*M
+    // X2 = D - C
+    // X = X1 + X2
     // MF = min(M+D)*MC*MZ+MM*(MC+MM)*a
     @Override
     public void run() {
         System.out.printf("Thread started: %d %n", id);
-        O.multiplyPartOfMatrAndVec(O.data.M, O.data.M, O.data.MC);
-        O.addPartOfTwoVercors(O.data.M, O.data.M, O.data.D);
-        O.subPartOfTwoVercors(O.data.M, O.data.M, O.data.C);
-        O.sortVec(O.data.M);
+        O.multiplyPartOfMatrAndVec(O.data.X1, O.data.M, O.data.MC);
+        O.subPartOfTwoVercors(O.data.X2, O.data.D, O.data.C);
+        O.addPartOfTwoVercors(O.data.X, O.data.X1, O.data.X2);
+        O.sortVec(O.data.X);
         System.out.printf("Thread finished: %d %n", id);
     }
 }
