@@ -26,7 +26,18 @@ class Main2 {
             T4.join();
 
             for (int i = 0; i < n; i++) {
-                System.out.println(d.X[i]);
+                System.out.print(d.X[i]);
+                System.out.printf(" ");
+            }
+
+            System.out.printf("\n");
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; i < n; i++) {
+                    System.out.print(d.MF[i][j]);
+                    System.out.printf(" ");
+                }
+                System.out.printf("\n");
             }
             System.out.println("Finish main thread"); 
         } catch (InterruptedException e) {
