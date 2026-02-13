@@ -2,10 +2,11 @@ import java.util.Random;
 
 public class Data {
     public int N, P, H;
-    public double a;
-    public double[] M, D, C, X1, X2, X;
+    public double a, md;
+    public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM;
     public Object lockM_M = new Object();
+    public Object lockmd = new Object();
 
     public Data(int n) {
         Random r = new Random();

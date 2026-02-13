@@ -89,6 +89,16 @@ public class Ops {
         System.arraycopy(merged, 0, Res, leftStart, merged.length);
     }
 
+    public double findMin(double[] M) {
+        double min = M[start];
+        for (int i = start; i < end; i++) {
+            if (min > M[i]) {
+                min = M[i];
+            }
+        }
+        return min;
+    }
+
     public double[] returnX(double[] vec) {
         double[] res = new double[data.H];
         int idx = 0;
