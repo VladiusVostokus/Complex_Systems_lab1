@@ -49,6 +49,14 @@ public class Ops {
         }
     }
 
+    public void addPartOfTwoMatr(double[][] Res, double[][] A, double[][] B) {
+        for (int i = start; i < end; i++) {
+            for (int j = 0; j < data.N; j++) {
+                Res[i][j] = A[i][j] * B[i][j];
+            }
+        }
+    }
+
     public void addPartOfTwoVercors(double[] Res, double[] A, double[] B) {
         for (int i = start; i < end; i++) {
            Res[i] = A[i] + B[i];
