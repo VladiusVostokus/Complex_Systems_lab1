@@ -14,6 +14,7 @@ public class Data2 {
         P = 4;
         H = N / P;
         a = generateDouble(r, 1, 10000);
+        md =  Double.MAX_VALUE;
         M = new double[n];
         D = new double[n];
         C = new double[n];

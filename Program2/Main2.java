@@ -33,9 +33,8 @@ class Main2 {
             System.out.printf("\n");
 
             for (int i = 0; i < n; i++) {
-                for (int j = 0; i < n; i++) {
-                    System.out.print(d.MF[i][j]);
-                    System.out.printf(" ");
+                for (int j = 0; j < n; j++) {
+                    System.out.print(d.MF[i][j] + " ");
                 }
                 System.out.printf("\n");
             }

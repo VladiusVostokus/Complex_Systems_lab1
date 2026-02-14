@@ -21,7 +21,7 @@ public class Ops2 {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.N; j++) {
                 for (int k = start; k < end; k++) {
-                    Res[i][j] =+ A[i][k] * B[k][j];
+                    Res[i][j] += A[i][k] * B[k][j];
                 }
             }
         }
@@ -52,7 +52,7 @@ public class Ops2 {
     public void addPartOfTwoMatr(double[][] Res, double[][] A, double[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.N; j++) {
-                Res[i][j] = A[i][j] * B[i][j];
+                Res[i][j] = A[i][j] + B[i][j];
             }
         }
     }
