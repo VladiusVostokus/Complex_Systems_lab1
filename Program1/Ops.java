@@ -17,6 +17,24 @@ public class Ops {
         }
     }
 
+    public double findMin(double[] M) {
+        double min = M[start];
+        for (int i = start; i < end; i++) {
+            if (min > M[i]) {
+                min = M[i];
+            }
+        }
+        return min;
+    }
+    
+    public void addPartOfTwoMatr(double[][] Res, double[][] A, double[][] B) {
+        for (int i = start; i < end; i++) {
+            for (int j = 0; j < data.N; j++) {
+                Res[i][j] = A[i][j] * B[i][j];
+            }
+        }
+    }
+
     public void multiplyPartOfMatrices(double[][] Res, double[][] A, double[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.N; j++) {
