@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
-public class Ops {
-    Data data;
+public class Ops1 {
+    Data1 data;
     int start, end;
-    public Ops(Data d, int threadId) {
+    public Ops1(Data1 d, int threadId) {
         data = d;
         start = data.H * threadId;
         end = start + data.H;
@@ -113,6 +113,19 @@ public class Ops {
         for (int i = start; i < end; i++) {
             res[idx] = vec[i];
             idx++;
+        }
+        return res;
+    }
+
+    public double[][] returnMF(double[][] mtr) {
+        double[][] res = new double[data.H][data.N];
+        int idx = 0;
+        for (int i = start; i < end; i++) {
+            for (int j = 0; j < data.N; j++) {
+                res[idx][j] = mtr[i][j];
+                idx++;
+                System.out.printf("%f %f", i, j);
+            }
         }
         return res;
     }

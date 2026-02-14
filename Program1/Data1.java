@@ -1,12 +1,12 @@
 import java.util.Random;
 
-public class Data {
+public class Data1 {
     public int N, P, H;
     public double a, md;
-    public double[] M, D, C, X, X1, X2, E;
+    public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM, MF, MF1, MF2;
 
-    public Data(int n) {
+    public Data1(int n) {
         Random r = new Random();
         N = n;
         P = 4;
@@ -23,6 +23,10 @@ public class Data {
         MC = new double[n][n];
         MZ = new double[n][n];
         MM = new double[n][n];
+
+        MF = new double[n][n];
+        MF1 = new double[n][n];
+        MF2 = new double[n][n];
 
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {

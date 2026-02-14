@@ -4,26 +4,26 @@ class Main2 {
         int n = 4;
 
         Data d = new Data(n);
-        Ops o1 = new Ops(d, 0);
-        Ops o2 = new Ops(d, 1);
-        Ops o3 = new Ops(d, 2);
-        Ops o4 = new Ops(d, 3);
+        Ops2 o1 = new Ops2(d, 0);
+        Ops2 o2 = new Ops2(d, 1);
+        Ops2 o3 = new Ops2(d, 2);
+        Ops2 o4 = new Ops2(d, 3);
 
-        T T1 = new T(o1, n, n, 0);
-        T T2 = new T(o2, n, n, 1);
-        T T3 = new T(o3, n, n, 2);
-        T T4 = new T(o4, n, n, 3);
+        T2 T_1 = new T2(o1, n, n, 0);
+        T2 T_2 = new T2(o2, n, n, 1);
+        T2 T_3 = new T2(o3, n, n, 2);
+        T2 T_4 = new T2(o4, n, n, 3);
 
-        T1.start();
-        T2.start();
-        T3.start();
-        T4.start();
+        T_1.start();
+        T_2.start();
+        T_3.start();
+        T_4.start();
 
         try {
-            T1.join();
-            T2.join();
-            T3.join();
-            T4.join();
+            T_1.join();
+            T_2.join();
+            T_3.join();
+            T_4.join();
 
             for (int i = 0; i < n; i++) {
                 System.out.print(d.X[i]);
