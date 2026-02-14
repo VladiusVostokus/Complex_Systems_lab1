@@ -1,9 +1,9 @@
 import java.util.Arrays;
 
 public class Ops2 {
-    Data data;
+    Data2 data;
     int start, end;
-    public Ops2(Data d, int threadId) {
+    public Ops2(Data2 d, int threadId) {
         data = d;
         start = data.H * threadId;
         end = start + data.H;

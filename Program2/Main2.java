@@ -3,7 +3,7 @@ class Main2 {
         System.out.println("Start main thread"); 
         int n = 4;
 
-        Data d = new Data(n);
+        Data2 d = new Data2(n);
         Ops2 o1 = new Ops2(d, 0);
         Ops2 o2 = new Ops2(d, 1);
         Ops2 o3 = new Ops2(d, 2);

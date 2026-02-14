@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Data {
+public class Data2 {
     public int N, P, H;
     public double a, md;
     public double[] M, D, C, X1, X2, X, E;
@@ -8,7 +8,7 @@ public class Data {
     public Object lockM_M = new Object();
     public Object lockmd = new Object();
 
-    public Data(int n) {
+    public Data2(int n) {
         Random r = new Random();
         N = n;
         P = 4;
