@@ -50,6 +50,20 @@ class Main1 {
             for (int i = 0; i < n; i++) {
                 System.out.println(X[i]);
             }
+
+            System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, n);
+            System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, n);
+            System.arraycopy(MF3[o1.start], 0, MF[o3.start], 0, n);
+            System.arraycopy(MF4[o1.start], 0, MF[o4.start], 0, n);
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.print(MF[i][j]);
+                    System.out.printf(" ");
+                }
+                System.out.printf("\n");
+            }
+
             System.out.println("Finish main thread"); 
         } catch (InterruptedException e) {
             e.printStackTrace();
