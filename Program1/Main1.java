@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Main1 {
     public static void main(String[] args) {
         System.out.println("Start main thread"); 
@@ -46,6 +48,8 @@ class Main1 {
             System.arraycopy(X2, 0, X, o2.start, o2.data.H);
             System.arraycopy(X3, 0, X, o3.start, o3.data.H);
             System.arraycopy(X4, 0, X, o4.start, o4.data.H);
+
+            Arrays.parallelSort(X);
 
             for (int i = 0; i < n; i++) {
                 System.out.println(X[i]);
