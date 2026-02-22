@@ -9,10 +9,10 @@ class Main2 {
         Ops2 o3 = new Ops2(d, 2);
         Ops2 o4 = new Ops2(d, 3);
 
-        T2 T_1 = new T2(o1, n, n, 0);
-        T2 T_2 = new T2(o2, n, n, 1);
-        T2 T_3 = new T2(o3, n, n, 2);
-        T2 T_4 = new T2(o4, n, n, 3);
+        T2_1 T_1 = new T2_1(o1, n, n, 0);
+        T2_2 T_2 = new T2_2(o2, n, n, 1);
+        T2_3 T_3 = new T2_3(o3, n, n, 2);
+        T2_4 T_4 = new T2_4(o4, n, n, 3);
 
         T_1.start();
         T_2.start();
