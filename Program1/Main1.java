@@ -1,9 +1,12 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 
 class Main1 {
-    public static void main(String[] args) {
+    static int n = 4;
+    public static void main(String[] args) throws IOException {
         System.out.println("Start main thread"); 
-        int n = 4;
         double[] X = new double[n];
         double[][] MF = new double[n][n];
 
@@ -56,26 +59,49 @@ class Main1 {
 
             Arrays.parallelSort(X);
 
-            for (int i = 0; i < n; i++) {
-                System.out.println(X[i]);
-            }
-
             System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, n);
             System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, n);
             System.arraycopy(MF3[o1.start], 0, MF[o3.start], 0, n);
             System.arraycopy(MF4[o1.start], 0, MF[o4.start], 0, n);
-
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    System.out.print(MF[i][j]);
-                    System.out.printf(" ");
+            if (n < 10) {
+                System.out.println("X value:");
+                for (int i = 0; i < n; i++) {
+                    System.out.println(X[i]);
                 }
-                System.out.printf("\n");
+                System.out.println("MF value:");
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
+                        System.out.print(MF[i][j]);
+                        System.out.printf(" ");
+                    }
+                    System.out.printf("\n");
+                }
+                writeToFile("1.txt", X, MF);
             }
 
             System.out.println("Finish main thread"); 
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void writeToFile(String filename ,double[] Vec, double[][] Mtx) throws IOException {
+        try (BufferedWriter w = new BufferedWriter(new FileWriter(filename))) {
+            w.write("Value of X: ");
+            for (int i = 0; i < n; i++) {
+                w.write(Double.toString(Vec[i]));
+                if (i < n - 1) w.write(" ");
+            }
+            w.newLine();
+            w.write("Value of MF:");
+            w.newLine();
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    w.write(Double.toString(Mtx[i][j]));
+                    if (j < n - 1) w.write(" ");
+                }
+                w.newLine();
+            }
         }
     }
 }
