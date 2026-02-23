@@ -8,18 +8,23 @@ class Main1 {
         double[][] MF = new double[n][n];
 
         Data1 d1 = new Data1(n);
+        d1.initValues();
+        Data1 d2 = new Data1(n);
+        d2.clone(d1);
+        Data1 d3 = new Data1(n);
+        d3.clone(d1);
+        Data1 d4 = new Data1(n);
+        d4.clone(d1);
+
         Ops1 o1 = new Ops1(d1, 0);
         T1 T_1 = new T1(o1, n, n, 0);
 
-        Data1 d2 = new Data1(n);
         Ops1 o2 = new Ops1(d2, 1);
         T1 T_2 = new T1(o2, n, n, 1);
 
-        Data1 d3 = new Data1(n);
         Ops1 o3 = new Ops1(d3, 2);
         T1 T_3 = new T1(o3, n, n, 2);
 
-        Data1 d4 = new Data1(n);
         Ops1 o4 = new Ops1(d4, 3);
         T1 T_4 = new T1(o4, n, n, 3);
 

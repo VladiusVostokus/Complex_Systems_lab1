@@ -5,9 +5,10 @@ public class Data1 {
     public double a, md;
     public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM, MF, MF1, MF2;
+    private Random r;
 
     public Data1(int n) {
-        Random r = new Random();
+        r = new Random();
         N = n;
         P = 4;
         H = N / P;
@@ -29,6 +30,14 @@ public class Data1 {
         MF1 = new double[n][n];
         MF2 = new double[n][n];
 
+    }
+
+    private double generateDouble(Random r, int rangeMin, int rangeMax) {
+        double randomDouble = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
+        return randomDouble;
+    }
+
+    public void initValues() {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 MC[i][j] = generateDouble(r, 1, 10);
@@ -41,8 +50,18 @@ public class Data1 {
         }
     }
 
-    private double generateDouble(Random r, int rangeMin, int rangeMax) {
-        double randomDouble = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
-        return randomDouble;
+    public void clone(Data1 sourse) {
+        this.M = sourse.M.clone();
+        this.D = sourse.D.clone();
+        this.C = sourse.C.clone();
+        cloneMatrix(sourse.MC, this.MC);
+        cloneMatrix(sourse.MZ, this.MZ);
+        cloneMatrix(sourse.MM, this.MM);
+    }
+
+    private void cloneMatrix(double[][] sourse, double[][] destination) {
+        for (int i = 0; i < N; i++) {
+            destination[i] = sourse[i].clone();
+        }
     }
 }
