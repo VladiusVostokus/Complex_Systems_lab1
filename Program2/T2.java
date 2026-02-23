@@ -1,9 +1,13 @@
-public class T2_4 extends Thread {
+import java.util.Arrays;
+
+import javax.xml.crypto.Data;
+
+public class T2 extends Thread {
     private int h;
     private Ops2 O;
     private int id;
 
-    public T2_4(Ops2 o1, int n, int p, int threadId) {
+    public T2(Ops2 o1, int n, int p, int threadId) {
         h = n / p;
         O = o1;
         id = threadId;
@@ -32,16 +36,8 @@ public class T2_4 extends Thread {
         O.multiplyPartOfMatrAndVec(O.data.X1, O.data.M, O.data.MC);
         O.subPartOfTwoVercors(O.data.X2, O.data.D, O.data.C);
         O.addPartOfTwoVercors(O.data.X, O.data.X1, O.data.X2);
-        O.sortVec(O.data.X);
 
-
-        O.data.sem4_3.release();
-
-        try {
-            O.data.sortBarr.await();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Arrays.parallelSort(O.data.X);
 
         System.out.printf("Thread finished X calculation: %d %n", id);
         O.addPartOfTwoVercors(O.data.E, O.data.M, O.data.D);

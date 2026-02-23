@@ -9,10 +9,6 @@ public class Data2 {
     public double[][] MC, MZ, MM, MF, MF1, MF2;
     public Object lockM_M = new Object();
     public Object lockmd = new Object();
-    public Semaphore sem2_1 = new Semaphore(1);
-    public Semaphore sem4_3 = new Semaphore(1);
-    public Semaphore sem3_1 = new Semaphore(1);
-    public CyclicBarrier sortBarr = new CyclicBarrier(4);
 
     public Data2(int n) {
         Random r = new Random();
