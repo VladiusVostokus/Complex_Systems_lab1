@@ -1,7 +1,6 @@
 package Program2;
 
 import java.util.Arrays;
-import javax.xml.crypto.Data;
 
 public class T2 extends Thread {
     private int h;

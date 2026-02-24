@@ -1,5 +1,6 @@
 package Program2;
 
+import LabData.Data;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +10,7 @@ class Main2 {
     public static void main(String[] args) throws IOException {
         System.out.println("Start main thread"); 
 
-        Data2 d = new Data2(n);
+        Data d = new Data(n);
         Ops2 o1 = new Ops2(d, 0);
         Ops2 o2 = new Ops2(d, 1);
         Ops2 o3 = new Ops2(d, 2);
