@@ -4,6 +4,7 @@ import LabData.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Main2 {
     static int n = 4;
@@ -31,6 +32,8 @@ public class Main2 {
             T_2.join();
             T_3.join();
             T_4.join();
+
+            Arrays.parallelSort(d.X);
 
             if (n < 10) {
                 System.out.println("X value:");

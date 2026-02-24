@@ -1,8 +1,6 @@
 package Program2;
 import LabData.Ops;
 
-import java.util.Arrays;
-
 public class T2 extends Thread {
     private int h;
     private Ops O;
@@ -37,8 +35,7 @@ public class T2 extends Thread {
         O.multiplyPartOfMatrAndVec(O.data.X1, O.data.M, O.data.MC);
         O.subPartOfTwoVercors(O.data.X2, O.data.D, O.data.C);
         O.addPartOfTwoVercors(O.data.X, O.data.X1, O.data.X2);
-
-        Arrays.parallelSort(O.data.X);
+        O.sortVec(O.data.X);
 
         System.out.printf("Thread finished X calculation: %d %n", id);
         O.addPartOfTwoVercors(O.data.E, O.data.M, O.data.D);
