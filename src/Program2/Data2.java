@@ -1,3 +1,5 @@
+package Program2;
+
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;

@@ -1,3 +1,5 @@
+package Program1;
+
 import java.util.Random;
 
 public class Data1 {
