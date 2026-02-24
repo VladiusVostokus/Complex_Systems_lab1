@@ -1,11 +1,10 @@
 package LabData;
 
-import LabData.Data;
 import java.util.Arrays;
 
 public class Ops {
     public Data data;
-    int start, end;
+    public int start, end;
     public Ops(Data d, int threadId) {
         data = d;
         start = data.H * threadId;
@@ -115,6 +114,16 @@ public class Ops {
         int idx = 0;
         for (int i = start; i < end; i++) {
             res[idx] = vec[i];
+            idx++;
+        }
+        return res;
+    }
+
+    public double[][] returnMF(double[][] mtr) {
+        double[][] res = new double[data.H][data.N];
+        int idx = 0;
+        for (int i = start; i < end; i++) {
+            System.arraycopy(mtr[i], 0, res[idx], 0, data.N);
             idx++;
         }
         return res;

@@ -1,13 +1,13 @@
 package Program1;
 
-import LabData.Data;
+import LabData.Ops;
 
 public class T1 extends Thread {
     private int h;
-    private Ops1 O;
+    private Ops O;
     private int id;
 
-    public T1(Ops1 ops, int n, int p, int threadId) {
+    public T1(Ops ops, int n, int p, int threadId) {
         h = n / p;
         O = ops;
         id = threadId;

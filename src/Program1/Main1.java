@@ -1,6 +1,6 @@
 package Program1;
 
-import LabData.Data;
+import LabData.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,16 +23,16 @@ class Main1 {
         Data d4 = new Data(n);
         d4.clone(d1);
 
-        Ops1 o1 = new Ops1(d1, 0);
+        Ops o1 = new Ops(d1, 0);
         T1 T_1 = new T1(o1, n, n, 0);
 
-        Ops1 o2 = new Ops1(d2, 1);
+        Ops o2 = new Ops(d2, 1);
         T1 T_2 = new T1(o2, n, n, 1);
 
-        Ops1 o3 = new Ops1(d3, 2);
+        Ops o3 = new Ops(d3, 2);
         T1 T_3 = new T1(o3, n, n, 2);
 
-        Ops1 o4 = new Ops1(d4, 3);
+        Ops o4 = new Ops(d4, 3);
         T1 T_4 = new T1(o4, n, n, 3);
 
         T_1.start();
