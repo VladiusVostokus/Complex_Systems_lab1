@@ -8,7 +8,8 @@ import java.util.Arrays;
 
 public class Main1 {
     static int n = 4;
-    static double md;
+    public static double md = Double.MAX_VALUE;
+    public static final Object lockmd = new Object();
     public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];

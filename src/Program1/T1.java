@@ -43,16 +43,15 @@ public class T1 extends Thread {
         System.out.printf("Thread finished X calculation: %d %n", id);
         O.addPartOfTwoVercors(O.data.E, O.data.M, O.data.D);
         double md = O.findMin(O.data.E);
-        synchronized(O.data.lockmd) {
-            if (Main1.md < md)
-            O.data.md = md;
+        synchronized(Main1.lockmd) {
+            if (md < Main1.md)
+            Main1.md = md;
         }
-
 
         O.multiplyPartOfMatrices(O.data.MF1, O.data.MC, O.data.MZ);
         O.addPartOfTwoMatr(O.data.MF2, O.data.MC, O.data.MM);
         O.mulPartOfMatrAndScal(O.data.MF2, O.data.a);
-        O.mulPartOfMatrAndScal(O.data.MF1, O.data.md);
+        O.mulPartOfMatrAndScal(O.data.MF1, Main1.md);
         O.addPartOfTwoMatr(O.data.MF, O.data.MF1, O.data.MF2);
         System.out.printf("Thread finished: %d %n", id);
     }
