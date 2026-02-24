@@ -15,7 +15,7 @@ public class Data {
         N = n;
         P = 4;
         H = N / P;
-        a = generateDouble(r, 1, 10000);
+        a = generateDouble(r, 1, 10);
         md =  Double.MAX_VALUE;
         M = new double[n];
         D = new double[n];
@@ -64,6 +64,7 @@ public class Data {
     }
 
     public void clone(Data sourse) {
+        this.a = sourse.a;
         this.M = sourse.M.clone();
         this.D = sourse.D.clone();
         this.C = sourse.C.clone();
