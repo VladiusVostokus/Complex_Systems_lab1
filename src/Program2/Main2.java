@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class Main2 {
+public class Main2 {
     static int n = 4;
     public static void main(String[] args) throws IOException {
         System.out.println("Start main thread"); 

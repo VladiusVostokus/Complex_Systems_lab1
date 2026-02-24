@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-class Main1 {
+public class Main1 {
     static int n = 4;
     static double md;
     public static void main(String[] args) throws IOException {
