@@ -1,11 +1,12 @@
 package Program1;
 
 import java.util.Arrays;
+import LabData.Data;
 
 public class Ops1 {
-    Data1 data;
+    Data data;
     int start, end;
-    public Ops1(Data1 d, int threadId) {
+    public Ops1(Data d, int threadId) {
         data = d;
         start = data.H * threadId;
         end = start + data.H;

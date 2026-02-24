@@ -1,5 +1,6 @@
 package Program1;
 
+import LabData.Data;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,13 +14,13 @@ class Main1 {
         double[] X = new double[n];
         double[][] MF = new double[n][n];
 
-        Data1 d1 = new Data1(n);
+        Data d1 = new Data(n);
         d1.initValues();
-        Data1 d2 = new Data1(n);
+        Data d2 = new Data(n);
         d2.clone(d1);
-        Data1 d3 = new Data1(n);
+        Data d3 = new Data(n);
         d3.clone(d1);
-        Data1 d4 = new Data1(n);
+        Data d4 = new Data(n);
         d4.clone(d1);
 
         Ops1 o1 = new Ops1(d1, 0);

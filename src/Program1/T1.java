@@ -1,5 +1,7 @@
 package Program1;
 
+import LabData.Data;
+
 public class T1 extends Thread {
     private int h;
     private Ops1 O;
