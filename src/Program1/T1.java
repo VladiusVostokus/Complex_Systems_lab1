@@ -3,12 +3,10 @@ package Program1;
 import LabData.Ops;
 
 public class T1 extends Thread {
-    private int h;
     private Ops O;
     private int id;
 
-    public T1(Ops ops, int n, int p, int threadId) {
-        h = n / p;
+    public T1(Ops ops, int threadId) {
         O = ops;
         id = threadId;
     }

@@ -17,10 +17,10 @@ public class Main2 {
         Ops o3 = new Ops(d, 2);
         Ops o4 = new Ops(d, 3);
 
-        T2 T_1 = new T2(o1, n, n, 0);
-        T2 T_2 = new T2(o2, n, n, 1);
-        T2 T_3 = new T2(o3, n, n, 2);
-        T2 T_4 = new T2(o4, n, n, 3);
+        T2 T_1 = new T2(o1, 0);
+        T2 T_2 = new T2(o2, 1);
+        T2 T_3 = new T2(o3, 2);
+        T2 T_4 = new T2(o4, 3);
 
         T_1.start();
         T_2.start();
