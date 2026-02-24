@@ -1,13 +1,14 @@
 package Program2;
+import LabData.Ops;
 
 import java.util.Arrays;
 
 public class T2 extends Thread {
     private int h;
-    private Ops2 O;
+    private Ops O;
     private int id;
 
-    public T2(Ops2 o1, int n, int p, int threadId) {
+    public T2(Ops o1, int n, int p, int threadId) {
         h = n / p;
         O = o1;
         id = threadId;

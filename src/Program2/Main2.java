@@ -1,6 +1,6 @@
 package Program2;
 
-import LabData.Data;
+import LabData.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,10 +11,10 @@ class Main2 {
         System.out.println("Start main thread"); 
 
         Data d = new Data(n);
-        Ops2 o1 = new Ops2(d, 0);
-        Ops2 o2 = new Ops2(d, 1);
-        Ops2 o3 = new Ops2(d, 2);
-        Ops2 o4 = new Ops2(d, 3);
+        Ops o1 = new Ops(d, 0);
+        Ops o2 = new Ops(d, 1);
+        Ops o3 = new Ops(d, 2);
+        Ops o4 = new Ops(d, 3);
 
         T2 T_1 = new T2(o1, n, n, 0);
         T2 T_2 = new T2(o2, n, n, 1);
