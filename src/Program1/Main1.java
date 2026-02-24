@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 class Main1 {
     static int n = 4;
+    static double md;
     public static void main(String[] args) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];

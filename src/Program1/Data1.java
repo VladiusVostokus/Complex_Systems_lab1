@@ -8,6 +8,7 @@ public class Data1 {
     public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM, MF, MF1, MF2;
     private Random r;
+    public Object lockmd = new Object();
 
     public Data1(int n) {
         r = new Random();
