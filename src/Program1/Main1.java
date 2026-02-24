@@ -9,13 +9,12 @@ import java.util.Arrays;
 public class Main1 {
     static int n = 4;
     static double md;
-    public static void main(String[] args) throws IOException {
+    public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];
         double[][] MF = new double[n][n];
 
-        Data d1 = new Data(n);
-        d1.initValues();
+        Data d1 = data;
         Data d2 = new Data(n);
         d2.clone(d1);
         Data d3 = new Data(n);

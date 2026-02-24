@@ -8,10 +8,10 @@ import java.util.Arrays;
 
 public class Main2 {
     static int n = 4;
-    public static void main(String[] args) throws IOException {
+    public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
 
-        Data d = new Data(n);
+        Data d = data;
         Ops o1 = new Ops(d, 0);
         Ops o2 = new Ops(d, 1);
         Ops o3 = new Ops(d, 2);

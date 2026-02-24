@@ -2,12 +2,22 @@ import java.io.IOException;
 
 import Program1.Main1;
 import Program2.Main2;
+import LabData.Data;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        int n = 4;
+        Data data = new Data(n);
+        data.initValues();
+        Data d1 = new Data(n);
+        Data d2 = new Data(n);
+
+        d1.clone(data);
+        d2.clone(data);
+
         System.out.println("==============START PROGRAM1=================");
-        Main1.main(args);
+        Main1.main(d1);
         System.out.println("==============START PROGRAM2=================");
-        Main2.main(args);
+        Main2.main(d2);
     }
 }
