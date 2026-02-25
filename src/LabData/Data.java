@@ -34,17 +34,6 @@ public class Data {
         MF = new double[n][n];
         MF1 = new double[n][n];
         MF2 = new double[n][n];
-
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                MC[i][j] = generateDouble(r, 1, 10);
-                MZ[i][j] = generateDouble(r, 1, 10);
-                MM[i][j] = generateDouble(r, 1, 10);
-            }
-            M[i] = generateDouble(r, 1, 10);
-            D[i] = generateDouble(r, 1, 10);
-            C[i] = generateDouble(r, 1, 10);
-        }
     }
 
     private double generateDouble(Random r, int rangeMin, int rangeMax) {
