@@ -1,5 +1,7 @@
 package Program1;
 
+import java.util.concurrent.BrokenBarrierException;
+
 import LabData.Ops;
 
 public class T1 extends Thread {
@@ -51,6 +53,13 @@ public class T1 extends Thread {
         O.multiplyPartOfMatrices(O.data.MF1, O.data.MC, O.data.MZ);
         O.addPartOfTwoMatr(O.data.MF2, O.data.MC, O.data.MM);
         O.mulPartOfMatrAndScal(O.data.MF2, O.data.a);
+        try {
+            Main1.allTheadsFinishMd.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
+        }
         O.mulPartOfMatrAndScal(O.data.MF1, Main1.md);
         O.addPartOfTwoMatr(O.data.MF, O.data.MF1, O.data.MF2);
         System.out.printf("Thread finished: %d %n", id);

@@ -1,6 +1,7 @@
 package LabData;
 
 import java.util.Random;
+import java.util.concurrent.CyclicBarrier;
 
 public class Data {
     public int N, P, H;
@@ -8,6 +9,7 @@ public class Data {
     public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM, MF, MF1, MF2;
     public Object lockmd = new Object();
+    public CyclicBarrier allTheadsFinishMd = new CyclicBarrier(4);
     private Random r;
 
     public Data(int n) {

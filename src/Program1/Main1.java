@@ -5,11 +5,13 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.concurrent.CyclicBarrier;
 
 public class Main1 {
     static int n = 4;
     public static double md = Double.MAX_VALUE;
     public static final Object lockmd = new Object();
+    public static CyclicBarrier allTheadsFinishMd = new CyclicBarrier(4);
     public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];
