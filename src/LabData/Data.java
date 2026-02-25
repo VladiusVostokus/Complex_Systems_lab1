@@ -8,8 +8,8 @@ public class Data {
     public double a, md;
     public double[] M, D, C, X1, X2, X, E;
     public double[][] MC, MZ, MM, MF, MF1, MF2;
-    public Object lockmd = new Object();
-    public CyclicBarrier allTheadsFinishMd = new CyclicBarrier(4);
+    public Object lockmd;
+    public CyclicBarrier allTheadsFinishMd;
     private Random r;
 
     public Data(int n) {
@@ -17,7 +17,6 @@ public class Data {
         N = n;
         P = 4;
         H = N / P;
-        a = generateDouble(r, 1, 10);
         md =  Double.MAX_VALUE;
         M = new double[n];
         D = new double[n];
@@ -42,6 +41,9 @@ public class Data {
     }
 
     public void initValues() {
+        a = generateDouble(r, 1, 10);
+        lockmd = new Object();
+        allTheadsFinishMd = new CyclicBarrier(N);
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 MC[i][j] = generateDouble(r, 1, 10);

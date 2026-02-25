@@ -13,7 +13,10 @@ public class Main {
         Data d2 = new Data(n);
 
         d1.clone(data);
+        d1.cloneSync(data);
+        
         d2.clone(data);
+        d2.cloneSync(data);
 
         System.out.println("==============START PROGRAM1=================");
         Main1.main(d1);
