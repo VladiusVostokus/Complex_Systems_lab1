@@ -73,10 +73,12 @@ public class Main1 {
             double[][] MF3 = T_3.returnMF();
             double[][] MF4 = T_4.returnMF();
 
-            System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, N);
-            System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, N);
-            System.arraycopy(MF3[o1.start], 0, MF[o3.start], 0, N);
-            System.arraycopy(MF4[o1.start], 0, MF[o4.start], 0, N);
+            for (int i = 0; i < N/4; i++) {
+                System.arraycopy(MF1[o1.start + i], 0, MF[o1.start + i], 0, N);
+                System.arraycopy(MF2[o1.start + i], 0, MF[o2.start + i], 0, N);
+                System.arraycopy(MF3[o1.start + i], 0, MF[o3.start + i], 0, N);
+                System.arraycopy(MF4[o1.start + i], 0, MF[o4.start + i], 0, N);
+            }
             if (N < 10) {
                 System.out.println("X value:");
                 for (int i = 0; i < N; i++) {

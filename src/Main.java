@@ -6,7 +6,7 @@ import LabData.Data;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        int n = 4;
+        int n = 8;
         Data data = new Data(n);
         data.initValues();
         Data d1 = new Data(n);
