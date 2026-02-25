@@ -10,8 +10,6 @@ import java.util.concurrent.CyclicBarrier;
 public class Main1 {
     static int n = 4;
     public static double md = Double.MAX_VALUE;
-    public static final Object lockmd = new Object();
-    public static CyclicBarrier allTheadsFinishMd = new CyclicBarrier(4);
     public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];
@@ -20,10 +18,15 @@ public class Main1 {
         Data d1 = data;
         Data d2 = new Data(n);
         d2.clone(d1);
+        d2.cloneSync(d1);
+
         Data d3 = new Data(n);
         d3.clone(d1);
+        d3.cloneSync(d1);
+
         Data d4 = new Data(n);
         d4.clone(d1);
+        d4.cloneSync(d1);
 
         Ops o1 = new Ops(d1, 0);
         T1 T_1 = new T1(o1, 0);

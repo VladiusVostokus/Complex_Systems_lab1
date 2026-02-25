@@ -45,7 +45,7 @@ public class T1 extends Thread {
         System.out.printf("Thread finished X calculation: %d %n", id);
         O.addPartOfTwoVercors(O.data.E, O.data.M, O.data.D);
         double md = O.findMin(O.data.E);
-        synchronized(Main1.lockmd) {
+        synchronized(O.data.lockmd) {
             if (md < Main1.md)
             Main1.md = md;
         }
@@ -54,7 +54,7 @@ public class T1 extends Thread {
         O.addPartOfTwoMatr(O.data.MF2, O.data.MC, O.data.MM);
         O.mulPartOfMatrAndScal(O.data.MF2, O.data.a);
         try {
-            Main1.allTheadsFinishMd.await();
+            O.data.allTheadsFinishMd.await();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (BrokenBarrierException e) {

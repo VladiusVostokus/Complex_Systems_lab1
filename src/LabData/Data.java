@@ -64,6 +64,11 @@ public class Data {
         cloneMatrix(sourse.MM, this.MM);
     }
 
+    public void cloneSync(Data sourse) {
+        this.lockmd = sourse.lockmd;
+        this.allTheadsFinishMd = sourse.allTheadsFinishMd;
+    }
+
     private void cloneMatrix(double[][] sourse, double[][] destination) {
         for (int i = 0; i < N; i++) {
             destination[i] = sourse[i].clone();
