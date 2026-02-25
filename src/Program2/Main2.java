@@ -8,6 +8,7 @@ import java.util.Arrays;
 
 public class Main2 {
     static int n = 4;
+    public static long time;
     public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
 
@@ -22,6 +23,7 @@ public class Main2 {
         T2 T_3 = new T2(o3, 2);
         T2 T_4 = new T2(o4, 3);
 
+        long startTime = System.currentTimeMillis();
         T_1.start();
         T_2.start();
         T_3.start();
@@ -34,6 +36,8 @@ public class Main2 {
             T_4.join();
 
             Arrays.parallelSort(d.X);
+            long endTime = System.currentTimeMillis();
+            time = (endTime - startTime);
 
             if (n < 10) {
                 System.out.println("X value:");

@@ -5,11 +5,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.concurrent.CyclicBarrier;
 
 public class Main1 {
     static int n = 4;
     public static double md = Double.MAX_VALUE;
+    public static long time;
     public static void main(Data data) throws IOException {
         System.out.println("Start main thread"); 
         double[] X = new double[n];
@@ -40,6 +40,7 @@ public class Main1 {
         Ops o4 = new Ops(d4, 3);
         T1 T_4 = new T1(o4, 3);
 
+        long startTime = System.currentTimeMillis();
         T_1.start();
         T_2.start();
         T_3.start();
@@ -62,6 +63,9 @@ public class Main1 {
             System.arraycopy(X4, 0, X, o4.start, o4.data.H);
 
             Arrays.parallelSort(X);
+            long endTime = System.currentTimeMillis();
+            time = (endTime - startTime);
+
 
             double[][] MF1 = T_1.returnMF();
             double[][] MF2 = T_2.returnMF();

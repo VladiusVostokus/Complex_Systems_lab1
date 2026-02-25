@@ -22,5 +22,8 @@ public class Main {
         Main1.main(d1);
         System.out.println("==============START PROGRAM2=================");
         Main2.main(d2);
+        System.out.println("================TOTAL TIME===================");
+        System.out.printf("Program 1: %d\n", Main1.time);
+        System.out.printf("Program 2: %d\n", Main2.time);
     }
 }
