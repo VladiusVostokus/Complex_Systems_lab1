@@ -53,17 +53,17 @@ public class Main1 {
             double[] X3 = T_3.returnX();
             double[] X4 = T_4.returnX();
 
-            double[][] MF1 = T_1.returnMF();
-            double[][] MF2 = T_2.returnMF();
-            double[][] MF3 = T_3.returnMF();
-            double[][] MF4 = T_4.returnMF();
-
             System.arraycopy(X1, 0, X, o1.start, o1.data.H);
             System.arraycopy(X2, 0, X, o2.start, o2.data.H);
             System.arraycopy(X3, 0, X, o3.start, o3.data.H);
             System.arraycopy(X4, 0, X, o4.start, o4.data.H);
 
             Arrays.parallelSort(X);
+
+            double[][] MF1 = T_1.returnMF();
+            double[][] MF2 = T_2.returnMF();
+            double[][] MF3 = T_3.returnMF();
+            double[][] MF4 = T_4.returnMF();
 
             System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, n);
             System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, n);
