@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class Main2 {
-    static int n = 4;
+    static int N;
     public static long time;
-    public static void main(Data data) throws IOException {
+    public static void main(Data data, int n) throws IOException {
         System.out.println("Start main thread"); 
-
+        N = n;
         Data d = data;
         Ops o1 = new Ops(d, 0);
         Ops o2 = new Ops(d, 1);
@@ -39,14 +39,14 @@ public class Main2 {
             long endTime = System.currentTimeMillis();
             time = (endTime - startTime);
 
-            if (n < 10) {
+            if (N < 10) {
                 System.out.println("X value:");
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < N; i++) {
                     System.out.println(d.X[i]);
                 }
                 System.out.println("MF value:");
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
+                for (int i = 0; i < N; i++) {
+                    for (int j = 0; j < N; j++) {
                         System.out.print(d.MF[i][j]);
                         System.out.printf(" ");
                     }
@@ -62,17 +62,17 @@ public class Main2 {
     public static void writeToFile(String filename ,double[] Vec, double[][] Mtx) throws IOException {
         try (BufferedWriter w = new BufferedWriter(new FileWriter(filename))) {
             w.write("Value of X: ");
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < N; i++) {
                 w.write(Double.toString(Vec[i]));
-                if (i < n - 1) w.write(" ");
+                if (i < N - 1) w.write(" ");
             }
             w.newLine();
             w.write("Value of MF:");
             w.newLine();
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
                     w.write(Double.toString(Mtx[i][j]));
-                    if (j < n - 1) w.write(" ");
+                    if (j < N - 1) w.write(" ");
                 }
                 w.newLine();
             }

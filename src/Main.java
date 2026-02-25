@@ -19,9 +19,9 @@ public class Main {
         d2.cloneSync(data);
 
         System.out.println("==============START PROGRAM1=================");
-        Main1.main(d1);
+        Main1.main(d1, n);
         System.out.println("==============START PROGRAM2=================");
-        Main2.main(d2);
+        Main2.main(d2, n);
         System.out.println("================TOTAL TIME===================");
         System.out.printf("Program 1: %d\n", Main1.time);
         System.out.printf("Program 2: %d\n", Main2.time);

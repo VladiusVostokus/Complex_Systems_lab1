@@ -7,24 +7,25 @@ import java.io.IOException;
 import java.util.Arrays;
 
 public class Main1 {
-    static int n = 4;
+    static int N;
     public static double md = Double.MAX_VALUE;
     public static long time;
-    public static void main(Data data) throws IOException {
+    public static void main(Data data, int n) throws IOException {
         System.out.println("Start main thread"); 
-        double[] X = new double[n];
-        double[][] MF = new double[n][n];
+        N = n;
+        double[] X = new double[N];
+        double[][] MF = new double[N][N];
 
         Data d1 = data;
-        Data d2 = new Data(n);
+        Data d2 = new Data(N);
         d2.clone(d1);
         d2.cloneSync(d1);
 
-        Data d3 = new Data(n);
+        Data d3 = new Data(N);
         d3.clone(d1);
         d3.cloneSync(d1);
 
-        Data d4 = new Data(n);
+        Data d4 = new Data(N);
         d4.clone(d1);
         d4.cloneSync(d1);
 
@@ -72,18 +73,18 @@ public class Main1 {
             double[][] MF3 = T_3.returnMF();
             double[][] MF4 = T_4.returnMF();
 
-            System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, n);
-            System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, n);
-            System.arraycopy(MF3[o1.start], 0, MF[o3.start], 0, n);
-            System.arraycopy(MF4[o1.start], 0, MF[o4.start], 0, n);
-            if (n < 10) {
+            System.arraycopy(MF1[o1.start], 0, MF[o1.start], 0, N);
+            System.arraycopy(MF2[o1.start], 0, MF[o2.start], 0, N);
+            System.arraycopy(MF3[o1.start], 0, MF[o3.start], 0, N);
+            System.arraycopy(MF4[o1.start], 0, MF[o4.start], 0, N);
+            if (N < 10) {
                 System.out.println("X value:");
-                for (int i = 0; i < n; i++) {
+                for (int i = 0; i < N; i++) {
                     System.out.println(X[i]);
                 }
                 System.out.println("MF value:");
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
+                for (int i = 0; i < N; i++) {
+                    for (int j = 0; j < N; j++) {
                         System.out.print(MF[i][j]);
                         System.out.printf(" ");
                     }
@@ -101,17 +102,17 @@ public class Main1 {
     public static void writeToFile(String filename ,double[] Vec, double[][] Mtx) throws IOException {
         try (BufferedWriter w = new BufferedWriter(new FileWriter(filename))) {
             w.write("Value of X: ");
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < N; i++) {
                 w.write(Double.toString(Vec[i]));
-                if (i < n - 1) w.write(" ");
+                if (i < N - 1) w.write(" ");
             }
             w.newLine();
             w.write("Value of MF:");
             w.newLine();
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
                     w.write(Double.toString(Mtx[i][j]));
-                    if (j < n - 1) w.write(" ");
+                    if (j < N - 1) w.write(" ");
                 }
                 w.newLine();
             }
