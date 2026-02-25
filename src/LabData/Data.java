@@ -18,21 +18,21 @@ public class Data {
         P = 4;
         H = N / P;
         md =  Double.MAX_VALUE;
-        M = new double[n];
-        D = new double[n];
-        C = new double[n];
-        E = new double[n];
-        X = new double[n];
-        X1 = new double[n];
-        X2 = new double[n];
+        M = new double[N];
+        D = new double[N];
+        C = new double[N];
+        E = new double[N];
+        X = new double[N];
+        X1 = new double[N];
+        X2 = new double[N];
 
-        MC = new double[n][n];
-        MZ = new double[n][n];
-        MM = new double[n][n];
+        MC = new double[N][N];
+        MZ = new double[N][N];
+        MM = new double[N][N];
 
-        MF = new double[n][n];
-        MF1 = new double[n][n];
-        MF2 = new double[n][n];
+        MF = new double[N][N];
+        MF1 = new double[N][N];
+        MF2 = new double[N][N];
     }
 
     private double generateDouble(Random r, int rangeMin, int rangeMax) {
@@ -43,7 +43,7 @@ public class Data {
     public void initValues() {
         a = generateDouble(r, 1, 10);
         lockmd = new Object();
-        allTheadsFinishMd = new CyclicBarrier(N);
+        allTheadsFinishMd = new CyclicBarrier(P);
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 MC[i][j] = generateDouble(r, 1, 10);
