@@ -22,7 +22,7 @@ public class Ops {
     public void multiplyPartOfMatrices(double[][] Res, double[][] A, double[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.N; j++) {
-                for (int k = start; k < end; k++) {
+                for (int k = 0; k < data.N; k++) {
                     Res[i][j] += A[i][k] * B[k][j];
                 }
             }
@@ -31,7 +31,7 @@ public class Ops {
 
     public void multiplyPartOfMatrAndVec(double[] Res, double[] A, double[][] B) {
         for (int i = start; i < end; i++) {
-            for (int j = 0; j < data.H; j++) {
+            for (int j = 0; j < data.N; j++) {
                 Res[i] += B[i][j] * A[j];
             }
         }
