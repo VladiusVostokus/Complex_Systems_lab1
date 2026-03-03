@@ -22,25 +22,44 @@ public class Ops {
     public void multiplyPartOfMatrices(double[][] Res, double[][] A, double[][] B) {
         for (int i = start; i < end; i++) {
             for (int j = 0; j < data.N; j++) {
+                double sum = 0.0;
+                double c = 0.0;
                 for (int k = 0; k < data.N; k++) {
-                    Res[i][j] += A[i][k] * B[k][j];
+                    double prod = A[i][k] * B[k][j];
+                    double y = prod - c;
+                    double t = sum + y;
+                    c = (t - sum) - y;
+                    sum = t;
                 }
+                Res[i][j] = sum;
             }
         }
     }
 
     public void multiplyPartOfMatrAndVec(double[] Res, double[] A, double[][] B) {
         for (int i = start; i < end; i++) {
+            double sum = 0.0;
+            double c = 0.0;
             for (int j = 0; j < data.N; j++) {
-                Res[i] += B[i][j] * A[j];
+                double prod = B[i][j] * A[j];
+                double y = prod - c;
+                double t = sum + y;
+                c = (t - sum) - y;
+                sum = t;
             }
+            Res[i] += sum;
         }
     }
 
     public double multiplyPartOfVecScalar(double[] A, double[] B) {
-        double res = 0;
+        double res = 0.0;
+        double c = 0.0;
         for (int i = start; i < end; i++) {
-            res += A[i] * B[i];
+            double prod = A[i] * B[i];
+            double y = prod - c;
+            double t = res + y;
+            c = (t - res) - y;
+            res = t;
         }
         return res;
     }
