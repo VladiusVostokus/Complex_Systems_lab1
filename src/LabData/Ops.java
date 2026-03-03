@@ -37,8 +37,8 @@ public class Ops {
         }
     }
 
-    public int multiplyPartOfVecScalar(double[] A, double[] B) {
-        int res = 0;
+    public double multiplyPartOfVecScalar(double[] A, double[] B) {
+        double res = 0;
         for (int i = start; i < end; i++) {
             res += A[i] * B[i];
         }
@@ -73,30 +73,6 @@ public class Ops {
 
     public void sortVec(double[] Res) {
         Arrays.sort(Res, start, end);
-    }
-
-    public void mergeVec(double[] Res, int leftStart, int rightStart, int rightEnd) {
-        double[] merged = new double[rightEnd - leftStart];
-        int i = leftStart;
-        int j = rightStart;
-        int k = 0;
-
-        while (i < rightStart && j < rightEnd) {
-            if (Res[i] <= Res[j]) {
-                merged[k++] = Res[i++];
-            } else {
-                merged[k++] = Res[j++];
-            }
-        }
-
-        while (i < rightStart) {
-            merged[k++] = Res[i++];
-        }
-
-        while (j < rightEnd) {
-            merged[k++] = Res[j++];
-        }
-        System.arraycopy(merged, 0, Res, leftStart, merged.length);
     }
 
     public double findMin(double[] M) {
